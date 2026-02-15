@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: harsh-deployment
+  labels:
+    app: nginx
+    apptype: frontend
+    env: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      apptype: frontend
+      env: prod
+  template:
+    metadata:
+      labels:
+        apptype: frontend
+        env: prod 
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+       
+kubectl annotate deployment/nginx-deployment kubernetes.io/change-cause="image updated to 1.16.1"
