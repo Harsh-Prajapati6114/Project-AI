@@ -1,0 +1,5 @@
+template:
+    metadata:
+      labels:
+        apptype: frontend
+        env: prod 
