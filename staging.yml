@@ -1,0 +1,8 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: harsh-deployment
+  labels:
+    app: nginx
+    apptype: frontend
+    env: prod
